@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Khoảnh Khắc Của Chúng Ta ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Our Love Story</h1></header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="story.html">Timeline</a></li>
+                <li><a href="vouchers.html">Quà Tặng</a></li>
+                <li><a href="gallery.html" class="active">Khoảnh Khắc</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Những Khoảnh Khắc Ngọt Ngào</h2>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="images/photo1.jpg" alt="Kỷ niệm 1"></div>
+                <div class="photo-item"><img src="images/photo2.jpg" alt="Kỷ niệm 2"></div>
+                <div class="photo-item"><img src="images/photo3.jpg" alt="Kỷ niệm 3"></div>
+                <div class="photo-item"><img src="images/photo4.jpg" alt="Kỷ niệm 4"></div>
+                <div class="photo-item"><img src="images/photo5.jpg" alt="Kỷ niệm 5"></div>
+                <div class="photo-item"><img src="images/photo6.jpg" alt="Kỷ niệm 6"></div>
+            </div>
+        </main>
+        <footer><p>Lưu giữ từng giây phút bên nhau.</p></footer>
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+    // Lấy các phần tử cần thiết
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const images = document.querySelectorAll(".photo-item img");
+    const closeBtn = document.querySelector(".close");
+
+    // Lặp qua từng ảnh và thêm sự kiện click
+    images.forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "flex"; // Hiện khung modal
+            modalImg.src = this.src;      // Gán ảnh được click vào khung
+            document.body.classList.add("no-scroll"); // Chặn cuộn trang
+        }
+    });
+
+    // Hàm để đóng modal
+    function closeModal() {
+        modal.style.display = "none"; // Ẩn khung modal
+        document.body.classList.remove("no-scroll"); // Cho phép cuộn trang lại
+    }
+
+    // Gán sự kiện click cho nút đóng (dấu X)
+    closeBtn.onclick = closeModal;
+
+    // Gán sự kiện click cho nền mờ (click ra ngoài để đóng)
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+    </script>
+
+</body>
+</html>

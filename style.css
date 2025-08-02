@@ -1,0 +1,287 @@
+/* style.css - Dùng chung cho tất cả các trang */
+/* Tối ưu hóa cho iPhone XS: 375px x 812px */
+body {
+    background-color: #fce4ec;
+    font-family: 'Quicksand', sans-serif;
+    color: #444;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 375px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff8a80, #ff5252);
+    color: white;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* --- Thanh Điều Hướng --- */
+nav {
+    background-color: #c2185b;
+    padding: 5px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #ffcdd2;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: #ad1457;
+    color: white;
+}
+
+/* --- Nội dung chính --- */
+main {
+    padding: 25px 20px;
+    flex-grow: 1;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 2.2em;
+    color: #c2185b;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+    background-color: #f5f5f5;
+}
+
+/* --- Các thành phần riêng --- */
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
+}
+
+/* Trang chủ */
+.home-hero {
+    text-align: center;
+}
+.home-hero img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffcdd2;
+    margin-bottom: 20px;
+}
+.home-hero p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Timeline (Trang story.html) */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 3px solid #f48fb1;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+.timeline-dot {
+    position: absolute;
+    left: -31.5px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #ff5252;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    color: #ad1457;
+}
+.timeline-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Plan (Trang trip.html) */
+.plan-header { text-align: center; margin-bottom: 20px; }
+.plan-header h3 { font-size: 1.5em; color: #ff5252; margin: 0; text-transform: uppercase; }
+.plan-header p { margin: 5px 0 0 0; color: #777; }
+.plan-item { background-color: #fff9c4; border-left: 5px solid #fbc02d; padding: 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
+.plan-item h4 { margin: 0 0 10px 0; color: #f57f17; }
+.plan-item p { margin: 5px 0; line-height: 1.5; }
+
+/* Gallery (Trang gallery.html) */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.photo-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #fce4ec;
+    transition: transform 0.3s ease;
+}
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+.voucher-container {
+    display: grid;
+    gap: 20px;
+}
+
+.voucher-item {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.voucher-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.voucher-content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.voucher-content h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #ad1457;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.voucher-content p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #666;
+}
+
+.voucher-stub {
+    flex-shrink: 0;
+    width: 80px;
+    background-color: #fce4ec;
+    border-left: 2px dashed #ff8a80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+}
+
+.voucher-stub p {
+    margin: 0;
+    transform: rotate(270deg);
+    font-weight: 600;
+    color: #c2185b;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.photo-item img {
+    cursor: pointer;
+}
+
+/* Khung hiển thị ảnh (Modal) */
+.modal {
+    display: none; /* Mặc định ẩn đi */
+    position: fixed; /* Giữ cố định trên màn hình */
+    z-index: 1000; /* Hiển thị lớp trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Nền mờ màu đen */
+    
+    /* Dùng flexbox để căn giữa ảnh */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nội dung ảnh bên trong modal */
+.modal-content {
+    display: block;
+    max-width: 90%; /* Ảnh không rộng quá 90% màn hình */
+    max-height: 80vh; /* Ảnh không cao quá 80% chiều cao màn hình */
+    animation: zoomIn 0.3s ease;
+}
+
+/* Hiệu ứng phóng to */
+@keyframes zoomIn {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+}
+
+/* Nút đóng (dấu X) */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Lớp dùng để chặn cuộn trang khi modal mở */
+body.no-scroll {
+    overflow: hidden;
+}
